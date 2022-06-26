@@ -24,6 +24,10 @@ export default {
       type: Number,
       default: 300
     },
+    replaceInterval: {
+      type: Number,
+      default: 1000,
+    },
     cursor: {
       type: Boolean,
       default: true
@@ -146,7 +150,7 @@ export default {
         this.fullEraseTimeout = setTimeout(() => {
           clearTimeout(this.fullEraseTimeout)
           this.reset()
-        }, 300)
+        }, this.replaceInterval)
       }
     },
     reset () {
